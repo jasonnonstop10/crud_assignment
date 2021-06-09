@@ -1,0 +1,15 @@
+{ "name": "crud_assignment",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/jasonnonstop10/crud_assignment.git",
+  "author": "jasonnonstop10 <jay44411@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.9",
+    "mongoose": "^5.12.13",
+    "nodemon": "^2.0.7"
+  }
+}
