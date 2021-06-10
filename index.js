@@ -26,10 +26,10 @@ app.get('/', (req, res) => {
   app.get("/movie/:name", async (req, res) => {
     try {
       const movie = await findMovieByName(req.params.name);
-      res.send(movie);
+      res.status(200).json({movie:movie});
     } catch (err) {
       console.log("err: ", err);
-      res.send(err);
+      res.status(404).send(err);
     }
   });
   
@@ -38,10 +38,10 @@ app.get('/', (req, res) => {
     try {
       console.log("req: ", req.body);
       const movie = await addMovie(req.body);
-      res.send(movie);
+      res.status(200).json({movie:movie});
     } catch (err) {
       console.log("err: ", err);
-      res.send(err);
+      res.status(400).send(err);
     }
   });
   
@@ -49,10 +49,10 @@ app.get('/', (req, res) => {
   app.put("/edit/:_id", async (req, res) => {
     try {
       const movie = await updateMovieById(req.params._id);
-      res.send(movie);
+      res.status(200).json({movie:movie});
     } catch (err) {
       console.log("err: ", err);
-      res.send(err);
+      res.status(400).send(err);
     }
   });
   
@@ -61,10 +61,10 @@ app.get('/', (req, res) => {
     try {
       console.log("req: ", req.body);
       const movie = await deleteMovieById(req.params._id);
-      res.send(movie);
+      res.status(200).json({movie:movie});
     } catch (err) {
       console.log("err: ", err);
-      res.send(err);
+      res.status(500).send(err);
     }
   });
 
