@@ -22,7 +22,7 @@ app.use(connectMongo);
 app.get('/', (req, res) => {
     res.send('Hello World!')
   })
-
+  //find Movie
   app.get("/movie/:name", async (req, res) => {
     try {
       const movie = await findMovieByName(req.params.name);
@@ -33,7 +33,7 @@ app.get('/', (req, res) => {
     }
   });
   
-  //create book
+  //create Movie
   app.post("/add/movie", async (req, res) => {
     try {
       console.log("req: ", req.body);
@@ -45,7 +45,7 @@ app.get('/', (req, res) => {
     }
   });
   
-  //update book
+  //update Movie
   app.put("/edit/:_id", async (req, res) => {
     try {
       const movie = await updateMovieById(req.params._id);
@@ -56,7 +56,7 @@ app.get('/', (req, res) => {
     }
   });
   
-  //delete book
+  //delete Movie
   app.delete("/delete/:_id", async (req, res) => {
     try {
       console.log("req: ", req.body);
