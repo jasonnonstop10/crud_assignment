@@ -6,16 +6,9 @@ const jay_movies = new Schema(
   {
     name: { type: String },
     description: { type: String },
-    director: { type: String },
-    actor: { type: String },
-    blockbuster:{ type: Boolean}, 
-    types: [
-      {
-        type: String,
-        enum: ["action", "comedy", "remantic", "drama", "sci-fi"],
-      },
-    ],
-    Review : { type: Number },
+    blockbuster: { type: Boolean },
+    types: { type: String },
+    review: { type: Number },
   },
   {
     strict: false,
