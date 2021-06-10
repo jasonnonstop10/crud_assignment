@@ -1,8 +1,8 @@
 // functions function structure
 const Movie = require("../models/jay_movies.model");
 
-module.exports.addMovie = async (req.body) => {
-  const {name,description,blockbuster,types,review} = req.body;
+module.exports.addMovie = async (input) => {
+  const {name,description,blockbuster,types,review} = input;
 
   // validate data
   if (!name) {
